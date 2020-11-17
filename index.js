@@ -32,8 +32,8 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('pong');
+  if(message.content == '링링아') {
+    return message.reply('와 부르노');
   }
 
 
@@ -60,7 +60,7 @@ client.on('message', (message) => {
     let commandList = [
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!청소', desc: '텍스트 지움'},
-      {name: '!초대', desc: '초대 코드 표기'},
+      {name: '!초대코드', desc: '초대 코드 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
