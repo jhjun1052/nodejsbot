@@ -32,23 +32,24 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('pong');
+  if(message.content == 'ping','링링') {
+    return message.reply('pong','왜 불러?');
   }
 
+
   if(message.content == '롤링') {
-    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
+    let img = 'https://cdn.discordapp.com/attachments/736914339461726299/741698929145675796/b3740675-2422-44b1-9ae5-9b9bfda57ab1.png';
     let embed = new Discord.RichEmbed()
       .setTitle('롤링')
       .setURL('http://bj.afreecatv.com/jhjun1052')
       .setAuthor('롤링', img, 'http://bj.afreecatv.com/jhjun1052')
       .setThumbnail(img)
       .addBlankField()
-      .addField('Inline field title', 'Some value here')
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
+      .addField('배그 스트리머', '죠랄 하나는 끝장나는 스트리머')
+      .addField('성별', '남자', true)
+      .addField('나이', '20대', true)
+      .addField('별명', '꽈찌쭈', true)
+      .addField('주무기', '베릴\nAKM\nKar98\nM24\n')
       .addBlankField()
       .setTimestamp()
       .setFooter('제작자 롤링', img)
