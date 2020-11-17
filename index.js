@@ -32,7 +32,7 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == '링링아'){
+  if(message.content == '링링아') {
     return message.reply('와 부르노');
 }
 
