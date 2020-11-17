@@ -34,7 +34,7 @@ client.on('message', (message) => {
 
   if(message.content == '링링아') {
     return message.reply('와 부르노');
-  }
+    }
 
 
   if(message.content == '롤링') {
@@ -64,9 +64,9 @@ client.on('message', (message) => {
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('Help of 콜라곰 BOT', helpImg)
+      .setAuthor('링링 도움말', helpImg)
       .setColor('#186de6')
-      .setFooter(`콜라곰 BOT ❤️`)
+      .setFooter(`제작자 롤링`)
       .setTimestamp()
     
     commandList.forEach(x => {
