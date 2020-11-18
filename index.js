@@ -6,6 +6,16 @@ const byeChannelName = "안녕히가세요";
 const welcomeChannelComment = "입영 대상자는 롤링에게 찾아가세요.";
 const byeChannelComment = "드디어 전역이냐?";
 
+client.on('messageUpdate', async message => {
+  
+  message.channel.send(`<@!${message.author.id}> 님이 \`${message.content}\` 을(를) 수정하셨습니다.`)
+})
+
+client.on('messageDelete', async message => {
+  
+  message.channel.send(`<@!${message.author.id}> 님이 \`${message.content}\` 을(를) 삭제하셨습니다.`)
+})
+
 client.on('ready', () => {
   console.log('켰다.');
   client.user.setPresence({ game: { name: '도움말을 쳐보세요.' }, status: 'online' })
@@ -34,7 +44,12 @@ client.on('message', (message) => {
 
   if(message.content == '링링아') {
     return message.reply('와 부르노');
-}
+  }
+  if(message.author.bot) return;
+  
+  if(message.content == '링링') {
+    return message.reply('말이 짧다...?');
+  }
 
 
   if(message.content == '롤링') {
