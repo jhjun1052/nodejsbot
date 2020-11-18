@@ -71,7 +71,7 @@ client.on('message', (message) => {
     return message.reply('밤비형 배그 접었단다');
   }
   if(message.author.bot) return;
-  
+
   if(message.content == '빙구형'){
     return message.reply('으르르를르르르르르를ㄹㄹㄹ');
   }
@@ -96,7 +96,7 @@ client.on('message', (message) => {
       .setFooter('제작자 롤링', img)
 
     message.channel.send(embed)
-  } else if(message.content == '도움말') {
+  } else if(message.content == '도움말','링링아 도움말') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
