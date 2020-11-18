@@ -8,7 +8,7 @@ const byeChannelComment = "드디어 전역이냐?";
 
 client.on('messageUpdate', async message => {
   
-  message.channel.send(`<@!${message.author.id}> 님이 \`${message.content}\` 을(를) 수정하셨습니다.`)
+  message.channel.send(`<@!${message.author.id}> 님이 ${message.content} 을(를) 수정하셨습니다.`)
 })
 
 client.on('messageDelete', async message => {
@@ -96,7 +96,7 @@ client.on('message', (message) => {
       .setFooter('제작자 롤링', img)
 
     message.channel.send(embed)
-  } else if(message.content == '도움말','링링아 도움말') {
+  } else if(message.content == '도움말','링링아 도움말 ') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
