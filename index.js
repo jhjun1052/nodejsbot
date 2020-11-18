@@ -50,18 +50,28 @@ client.on('message', (message) => {
   if(message.content == '링링') {
     return message.reply('말이 짧다...?');
   }
+  if(message.author.bot) return;
+
   if(message.content == '어쩌라고'){
     return message.reply('잘못들었습니다...?');
   }
+  if(message.author.bot) return;
+
   if(message.content == '롤링이형'){
     return message.reply('걔 화장실 갔다');
   }
+  if(message.author.bot) return;
+
   if(message.content == '흡하형'){
     return message.reply('안돼 돌아가');
   }
+  if(message.author.bot) return;
+
   if(message.content == '밤비형'){
     return message.reply('밤비형 배그 접었단다');
   }
+  if(message.author.bot) return;
+  
   if(message.content == '빙구형'){
     return message.reply('으르르를르르르르르를ㄹㄹㄹ');
   }
