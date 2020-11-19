@@ -1,15 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.argv.length == 2 ? process.env.token : "";
-const moment = require("moment");
-require("moment-duration-format");
-const momenttz = require('moment-timezone');
-const MessageAdd = require('./db/message_add.js')
 const welcomeChannelName = "✨입대자-명단✨";
 const byeChannelName = "🎉전역자-명단🎉";
 const welcomeChannelComment = "입영 대상자는 롤링에게 찾아가세요.";
 const byeChannelComment = "드디어 전역이냐?";
-const adminUserId = 363648958406590465;
 
 
 
