@@ -156,25 +156,10 @@ client.on('message', (message) => {
     } else {
       return message.reply('채널에서 실행해주세요.');
     }
-  } else if(message.content.startsWith('!전체공지')) {
+  }
+
+  if(message.content.startsWith('!청소')) {
     if(checkPermission(message)) return
-    if(message.member != null) { // 채널에서 공지 쓸 때
-      let contents = message.content.slice('!전체공지'.length);
-      message.member.guild.members.array().forEach(x => {
-        if(x.user.bot) return;
-        x.user.send(`<@${message.author.id}> ${contents}`);
-      });
-  
-      return message.reply('공지를 전송했습니다.');
-    } else {
-      return message.reply('채널에서 실행해주세요.');
-    }
-  } else if(message.content.startsWith('!청소')) {
-    if(message.channel.type == 'dm') {
-      return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
-    }
-    
-    if(message.channel.type != 'dm' && checkPermission(message)) return
 
     var clearLine = message.content.slice('!청소 '.length);
     var isNum = !isNaN(clearLine)
@@ -188,9 +173,10 @@ client.on('message', (message) => {
 
         var user = message.content.split(' ')[1].split('<@!')[1].split('>')[0];
         var count = parseInt(message.content.split(' ')[2])+1;
+        const _limit = 10;
         let _cnt = 0;
 
-        message.channel.fetchMessages().then(collected => {
+        message.channel.fetchMessages({limit: _limit}).then(collected => {
           collected.every(msg => {
             if(msg.author.id == user) {
               msg.delete();
@@ -207,47 +193,6 @@ client.on('message', (message) => {
         })
         .catch(console.error)
     }
-  } else if(message.content.startsWith('!강퇴')) {
-    if(message.channel.type == 'dm') {
-      return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
-    }
-    
-    if(message.channel.type != 'dm' && checkPermission(message)) return
-
-    console.log(message.mentions);
-
-    let userId = message.mentions.users.first().id;
-    let kick_msg = message.author.username+'#'+message.author.discriminator+'이(가) 강퇴시켰습니다.';
-    
-    message.member.guild.members.find(x => x.id == userId).kick(kick_msg)
-  } else if(message.content.startsWith('!밴')) {
-    if(message.channel.type == 'dm') {
-      return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
-    }
-    
-    if(message.channel.type != 'dm' && checkPermission(message)) return
-
-    console.log(message.mentions);
-
-    let userId = message.mentions.users.first().id;
-    let kick_msg = message.author.username+'#'+message.author.discriminator+'이(가) 강퇴시켰습니다.';
-
-    message.member.guild.members.find(x => x.id == userId).ban(kick_msg)
-  } else if(message.content.startsWith('!주사위')) {
-    let min = 1;
-    let max = 6;
-    let dice_num = parseInt(Math.random() * (max - min) + min);
-    return message.reply(`${dice_num}가 나왔습니다.`);
-  } else if(message.content.startsWith('!야')) {
-    let arr = [
-      'ㅇ_ㅇ?',
-      '뭠마?!',
-      '부르셨어요?',
-    ]
-    let min = 0;
-    let max = arr.length;
-    let index = parseInt(Math.random() * (max - min) + min);
-    return message.reply(`${arr[index]}가 나왔습니다.`);
   }
 });
 
