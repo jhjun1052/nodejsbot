@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.argv.length == 2 ? process.env.token : "";
-const welcomeChannelName = "✨입대자-명단✨";
-const byeChannelName = "🎉전역자-명단🎉";
-const welcomeChannelComment = "입영 대상자는 롤링에게 찾아가세요.";
-const byeChannelComment = "드디어 전역이냐?";
+const welcomeChannelName = "✨입사자-명단✨";
+const byeChannelName = "🎉퇴사자-명단🎉";
+const welcomeChannelComment = "인턴은 롤링에게 찾아가세요.";
+const byeChannelComment = "드디어 퇴사하냐?";
 
 
 
@@ -42,7 +42,7 @@ client.on("guildMemberAdd", (member) => {
 
   welcomeChannel.send(`<@${newUser.id}> ${welcomeChannelComment}\n`);
 
-  member.addRole(guild.roles.find(role => role.name == "입영대상자"));
+  member.addRole(guild.roles.find(role => role.name == "게스트"));
 });
 
 client.on("guildMemberRemove", (member) => {
