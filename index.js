@@ -89,7 +89,11 @@ client.on('message', (message) => {
   if(message.content == '빙구형'){
     return message.reply('으르르를르르르르르를ㄹㄹㄹ');
   }
+  if(message.author.bot) return;
 
+  if(message.content == '롤링 감도'){
+    return message.reply('DPI 1400 / 일반, 조준 30 / 수직 0.68 / 스코프 15 / 2배율 22 / 3배율 30 / 4배율 38 / 6배율 45 / 8,15배율 38');
+  }
 
 
   if(message.content == '롤링') {
