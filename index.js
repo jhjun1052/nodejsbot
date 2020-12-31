@@ -4,7 +4,7 @@ const token = process.argv.length == 2 ? process.env.token : "";
 const welcomeChannelName = "✨ㅣ입사자-명단";
 const byeChannelName = "🎉ㅣ퇴사자-명단";
 const welcomeChannelComment = "인턴은 정직원 신청에서 양식을 작성하고 롤링에게 제출하세요.";
-const byeChannelComment = "드디어 퇴사하냐?";
+const byeChannelComment = "조심해서 가라! 고생했다.";
 
 
 
