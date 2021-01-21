@@ -87,7 +87,7 @@ client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == '빙구형'){
-    return message.reply('정말루?!');
+    return message.reply('솔직히... 나도 그랬어');
   }
   if(message.author.bot) return;
 
@@ -104,7 +104,15 @@ client.on('message', (message) => {
   if(message.content == '젼스키형'){
     return message.reply('사실은 오래전부터 당신같은 남자를 기다려왔다우...!');
   }
-
+  if(message.content == '솔직히... 나도 그랬어'){
+    return message.reply('정말루?!');
+  }
+  if(message.content == '정말루?!'){
+    return message.reply('뻥이야...');
+  }
+  if(message.content == '뻥이야...'){
+    return message.reply('나의 순결한 마음을 이렇게 짓밟다니...! 이.....녀석 각오해라!!!!');
+  }
 
   if(message.content == '롤링') {
     let img = 'https://cdn.discordapp.com/attachments/736914339461726299/741698929145675796/b3740675-2422-44b1-9ae5-9b9bfda57ab1.png';
