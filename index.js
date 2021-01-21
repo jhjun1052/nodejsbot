@@ -87,7 +87,7 @@ client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == '빙구형'){
-    return message.reply('으르르를르르르르르를ㄹㄹㄹ');
+    return message.reply('정말루?!');
   }
   if(message.author.bot) return;
 
@@ -98,6 +98,11 @@ client.on('message', (message) => {
 
   if(message.content == '민식이형'){
     return message.reply('개라석이?');
+  }
+  if(message.author.bot) return;
+
+  if(message.content == '젼스키형'){
+    return message.reply('사실은 오래전부터 당신같은 남자를 기다려왔다우...!');
   }
 
 
